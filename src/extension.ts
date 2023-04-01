@@ -13,7 +13,7 @@ const showInfomationAndExit = (message:string) => {
 // validate text is Url string
 // or angle bracketed Url string 
 const validateUrl = (text:string) => {
-	// remove 1 character before and after maybe angle bracketed
+	// If it suspect angle bracketed, remove 1 character before and after
 	if (text.startsWith("<") && text.endsWith(">")) {
 		text = text.slice(2).slice(0, -1);
 	}
@@ -59,7 +59,8 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 		// text is Url
 		editor.edit(builder => {
-			builder.insert(editor.selection.active, `@[card](${text})\n`);
+			// FIXME: selectionの末端にinsertしてしまう -> selection範囲をreplaceする
+			builder.replace(editor.selection, `@[card](${text})\n`);
 		});
 	});
 
