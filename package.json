@@ -14,16 +14,25 @@
   "contributes": {
     "commands": [
       {
-        "command": "zenn-url-to-linkcard.helloWorld",
-        "title": "Hello World"
+        "command": "zenn-url-to-linkcard.fromClipboard",
+        "title": "URL in clipboard to linkcard style"
+      },
+      {
+        "command": "zenn-url-to-linkcard.fromSelection",
+        "title": "selection URL to linkcard style"
       }
     ],
     "menus": {
       "editor/context": [
         {
           "when": "editorFocus",
-          "command": "zenn-url-to-linkcard.helloWorld",
+          "command": "zenn-url-to-linkcard.fromClipboard",
           "group": "myGroup@1"
+        },
+        {
+          "when": "editorFocus",
+          "command": "zenn-url-to-linkcard.fromSelection",
+          "group": "myGroup@2"
         }
       ]
     }
