@@ -68,5 +68,14 @@
   "dependencies": {
     "generator-code": "^1.7.5",
     "is-url": "^1.2.4"
-  }
+  },
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "bugs": {
+    "url": "https://github.com/daifukuninja/zenn-url-to-linkcard/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daifukuninja/zenn-url-to-linkcard.git"
+  },
+  "homepage": "https://github.com/daifukuninja/zenn-url-to-linkcard/blob/main/README.md"
 }
