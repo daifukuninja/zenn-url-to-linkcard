@@ -14,16 +14,25 @@
   "contributes": {
     "commands": [
       {
-        "command": "zenn-url-to-linkcard.helloWorld",
-        "title": "Hello World"
+        "command": "zenn-url-to-linkcard.fromClipboard",
+        "title": "URL in clipboard to linkcard style"
+      },
+      {
+        "command": "zenn-url-to-linkcard.fromSelection",
+        "title": "selection URL to linkcard style"
       }
     ],
     "menus": {
       "editor/context": [
         {
           "when": "editorFocus",
-          "command": "zenn-url-to-linkcard.helloWorld",
+          "command": "zenn-url-to-linkcard.fromClipboard",
           "group": "myGroup@1"
+        },
+        {
+          "when": "editorFocus",
+          "command": "zenn-url-to-linkcard.fromSelection",
+          "group": "myGroup@2"
         }
       ]
     }
@@ -41,6 +50,7 @@
   },
   "devDependencies": {
     "@types/glob": "^8.1.0",
+    "@types/is-url": "^1.2.30",
     "@types/mocha": "^10.0.1",
     "@types/node": "16.x",
     "@types/vscode": "^1.77.0",
@@ -56,6 +66,7 @@
     "webpack-cli": "^5.0.1"
   },
   "dependencies": {
-    "generator-code": "^1.7.5"
+    "generator-code": "^1.7.5",
+    "is-url": "^1.2.4"
   }
 }
