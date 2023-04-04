@@ -1,13 +1,31 @@
 {
   "name": "zenn-url-to-linkcard",
-  "displayName": "zenn-url-to-linkcard",
-  "description": "",
+  "publisher": "daifukuninja",
+  "displayName": "URL to Linkcard for Zenn markdown",
+  "description": "%extension.description%",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.77.0"
   },
+  "icon": "assets/icon.png",
+  "homepage": "https://github.com/daifukuninja/zenn-url-to-linkcard/blob/main/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daifukuninja/zenn-url-to-linkcard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/daifukuninja/zenn-url-to-linkcard/issues"
+  },
+  "license": "SEE LICENSE IN `LICENSE` file.",
   "categories": [
+    "Snippets",
     "Other"
+  ],
+  "keywords": [
+    "zenn",
+    "zenn.dev",
+    "github.dev",
+    "markdown"
   ],
   "activationEvents": [],
   "main": "./dist/extension.js",
@@ -15,11 +33,11 @@
     "commands": [
       {
         "command": "zenn-url-to-linkcard.fromClipboard",
-        "title": "URL in clipboard to linkcard style"
+        "title": "%command.fromClipboard.title%"
       },
       {
         "command": "zenn-url-to-linkcard.fromSelection",
-        "title": "selection URL to linkcard style"
+        "title": "%command.fromSelection.title%"
       }
     ],
     "menus": {
@@ -68,14 +86,5 @@
   "dependencies": {
     "generator-code": "^1.7.5",
     "is-url": "^1.2.4"
-  },
-  "license": "SEE LICENSE IN LICENSE.txt",
-  "bugs": {
-    "url": "https://github.com/daifukuninja/zenn-url-to-linkcard/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/daifukuninja/zenn-url-to-linkcard.git"
-  },
-  "homepage": "https://github.com/daifukuninja/zenn-url-to-linkcard/blob/main/README.md"
+  }
 }
