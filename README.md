@@ -1,71 +1,39 @@
-# zenn-url-to-linkcard README
+# URL to Linkcard for Zenn markdown
 
-This is the README for your extension "zenn-url-to-linkcard". After writing up a brief description, we recommend including the following sections.
+この拡張機能は、URL文字列を[Zenn](https://zenn.dev/)のリンクカード記法に装飾します。
 
-## Features
+[English here.](./README.en.md)
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## 特徴
 
-For example if there is an image subfolder under your extension project workspace:
+- URL形式の文字列を、Zennのリンクカード記法(`@[card](...)`)に装飾します。
+- 任意のmarkdownファイル上で、コンテキストメニューから実行できます。
+- クリップボードにコピーしたURL文字列を変換して貼り付けます。
+- エディタ上で選択したURL文字列をリンクカード記法に置換します。
 
-\!\[feature X\]\(images/feature-x.png\)
+## 使用上のご注意
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- markdown形式(*.md)ファイルでのみ利用できます。 / Only available for markdown format (*.md) files.
+- 文字列がURL形式かどうかを判定するため、[`is-url`モジュール](https://www.npmjs.com/package/is-url)に依存しています。
 
-## Requirements
+## 使い方の例
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+任意のURL文字列をコピーします。
 
-## Extension Settings
+![](./assets/how-to-1.png)
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+コピーしたら、エディタ上でコンテキストメニューから`Linkcard style: paste URL`を選択します。
 
-For example:
+![](./assets/how-to-2.png)
 
-This extension contributes the following settings:
+カーソル位置に、コピーしたURLをリンクカード形式で貼り付けます。
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+![](./assets/how-to-3.png)
 
-## Known Issues
+## 今後の拡張予定
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+- 複数行の一括変換
 
-## Release Notes
+## ライセンス
 
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Apache License 2.0
