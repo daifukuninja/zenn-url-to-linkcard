@@ -1,6 +1,6 @@
 'use strict';
 import * as vscode from 'vscode';
-import isUrl = require('is-url');
+import { validateUrl } from './is-url';
 import { localeMap } from './localeMap';
 
 const SUPPORTED_DOC_ID = [
@@ -11,16 +11,6 @@ const showInfomationAndExit = (message:string) => {
 	vscode.window.showInformationMessage(message);
 	return
 };
-
-// validate text is Url string
-// or angle bracketed Url string 
-const validateUrl = (text:string) => {
-	// If it suspect angle bracketed, remove 1 character before and after
-	if (text.startsWith("<") && text.endsWith(">")) {
-		text = text.slice(2).slice(0, -1);
-	}
-	return isUrl(text);
-}
 
 export function activate(context: vscode.ExtensionContext) {
 	// TODO: 複数行のURL処理に対応する:データのクレンジングをする -> 改行コードで分割、空行の削除、各行のtrim、行ごとの"<>"除去、
