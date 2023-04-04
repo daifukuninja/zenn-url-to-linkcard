@@ -5,11 +5,11 @@ import { localeMap } from './localeMap';
 
 const SUPPORTED_DOC_ID = [
 	"markdown"	// support for markdown only
-]
+];
 
 const showInfomationAndExit = (message:string) => {
 	vscode.window.showInformationMessage(message);
-	return
+	return;
 };
 
 export function activate(context: vscode.ExtensionContext) {
@@ -26,7 +26,7 @@ export function activate(context: vscode.ExtensionContext) {
 			}
 			const doc = editor.document;
 			if (doc == null || !SUPPORTED_DOC_ID.includes(doc.languageId)) {
-				return showInfomationAndExit(localeMap("showInformationMessage.unsupportedDocumentType"))				
+				return showInfomationAndExit(localeMap("showInformationMessage.unsupportedDocumentType"));
 			}
 			// text is Url
 			editor.edit(builder => {
@@ -42,7 +42,7 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 		const doc = editor.document;
 		if (doc == null) {
-			return
+			return;
 		}
 		const text = doc.getText(editor.selection).trim();
 		if (!validateUrl(text)) {

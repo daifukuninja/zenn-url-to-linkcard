@@ -8,4 +8,4 @@ export const validateUrl = (text:string) => {
 		text = text.slice(2).slice(0, -1);
 	}
 	return isUrl(text);
-}
+};
