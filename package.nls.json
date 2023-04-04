@@ -1,0 +1,8 @@
+{
+    "extension.description": "Convert the URL string to 'Zenn's link card format'.",
+    "command.fromClipboard.title": "Linkcard style: paste URL",
+    "command.fromSelection.title": "Linkcard style: convert selection",
+    "showInformationMessage.textInClipboardIsNotUrl": "text in clipboard is not URL.",
+    "showInformationMessage.selectionTextIsNotUrl": "selection text is not URL.",
+    "showInformationMessage.unsupportedDocumentType": "unsupported document type."
+}

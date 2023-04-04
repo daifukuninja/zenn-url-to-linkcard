@@ -1,0 +1,8 @@
+{
+    "extension.description": "URL文字列を「Zennのリンクカード形式」に変換します。",
+    "command.fromClipboard.title": "Linkcard style: URLを貼り付け",
+    "command.fromSelection.title": "Linkcard style: 選択範囲を変換",
+    "showInformationMessage.textInClipboardIsNotUrl": "コピーした文字列はURLではないようです",
+    "showInformationMessage.selectionTextIsNotUrl": "選択した文字列はURLではないようです",
+    "showInformationMessage.unsupportedDocumentType": "サポートされていないファイル形式です"
+}
