@@ -6,14 +6,14 @@
 
 ## 特徴
 
-- URL形式の文字列を、Zennのリンクカード記法(`@[card](...)`)に装飾します。
+- URL形式の文字列を、Zennのリンクカード記法( **@\[card\]\("{url}"\)** )に装飾します。
 - 任意のmarkdownファイル上で、コンテキストメニューから実行できます。
 - クリップボードにコピーしたURL文字列を変換して貼り付けます。
 - エディタ上で選択したURL文字列をリンクカード記法に置換します。
 
 ## 使用上のご注意
 
-- markdown形式(*.md)ファイルでのみ利用できます。 / Only available for markdown format (*.md) files.
+- markdown形式(*.md)ファイルでのみ利用できます。
 - 文字列がURL形式かどうかを判定するため、[`is-url`モジュール](https://www.npmjs.com/package/is-url)に依存しています。
 
 ## 使い方の例
