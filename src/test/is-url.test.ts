@@ -1,4 +1,4 @@
-import { validateUrl } from '../is-url';
+import { unbracketString, validateUrl } from '../is-url';
 
 describe('is-url', () => {
   it('check url strings to be true', () => {
@@ -12,5 +12,13 @@ describe('is-url', () => {
   });
   it('check not url strings to be false', () => {
     expect(validateUrl("テスト")).toBe(false);
+  });
+  it('check bracked url issue', () => {
+    expect(unbracketString("<https://zenn.dev/>")).toBe("https://zenn.dev/");
+    expect(unbracketString("https://zenn.dev/")).toBe("https://zenn.dev/");
+  });
+  it('check incomplete bracked url issue', () => {
+    expect(unbracketString("https://zenn.dev/>")).toBe("https://zenn.dev/>");
+    expect(unbracketString("<https://zenn.dev/")).toBe("<https://zenn.dev/");
   });
 });
