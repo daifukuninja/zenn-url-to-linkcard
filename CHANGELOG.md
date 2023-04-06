@@ -21,3 +21,15 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ### Fixed
 
 - README.mdから英語表記の文面を削除
+
+## [1.0.0] - 2023-04-07
+
+### Fixed
+
+- "< >"で囲まれたURL文字列を処理した場合に"< >"をつけたままリンクカードにしてしまう問題の修正
+
+## [1.0.1] - 2023-04-07
+
+### Fixed
+
+- CHANGELOGの更新もれを対応
