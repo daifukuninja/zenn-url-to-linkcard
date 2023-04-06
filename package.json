@@ -3,7 +3,7 @@
   "publisher": "daifukuninja",
   "displayName": "URL to Linkcard for Zenn markdown",
   "description": "%extension.description%",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "vscode": "^1.77.0"
   },
