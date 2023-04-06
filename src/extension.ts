@@ -1,13 +1,14 @@
 'use strict';
 import * as vscode from 'vscode';
-import { validateUrl } from './is-url';
+import { unbracketString, validateUrl } from './is-url';
 import { localeMap } from './localeMap';
+import isUrl from 'is-url';
 
 const SUPPORTED_DOC_ID = [
 	"markdown"	// support for markdown only
 ];
 
-const showInfomationAndExit = (message:string) => {
+const showInfomationAndExit = (message: string) => {
 	vscode.window.showInformationMessage(message);
 	return;
 };
@@ -17,7 +18,8 @@ export function activate(context: vscode.ExtensionContext) {
 	let fromClipboard = vscode.commands.registerCommand('zenn-url-to-linkcard.fromClipboard', () => {
 		const promise = vscode.env.clipboard.readText();
 		promise.then((text) => {
-			if (!validateUrl(text)) {
+			const unbracketed: string = unbracketString(text);
+			if (!isUrl(unbracketed)) {
 				return showInfomationAndExit(localeMap("showInformationMessage.selectionTextIsNotUrl"));
 			}
 			const editor = vscode.window.activeTextEditor;
@@ -30,7 +32,7 @@ export function activate(context: vscode.ExtensionContext) {
 			}
 			// text is Url
 			editor.edit(builder => {
-				builder.insert(editor.selection.active, `@[card](${text})\n`);
+				builder.insert(editor.selection.active, `@[card](${unbracketed})\n`);
 			});
 		});
 	});
@@ -38,19 +40,20 @@ export function activate(context: vscode.ExtensionContext) {
 	let fromSelection = vscode.commands.registerCommand('zenn-url-to-linkcard.fromSelection', () => {
 		const editor = vscode.window.activeTextEditor;
 		if (editor == null) {
-			 return;
+			return;
 		}
 		const doc = editor.document;
 		if (doc == null) {
 			return;
 		}
 		const text = doc.getText(editor.selection).trim();
-		if (!validateUrl(text)) {
+		const unbracketed: string = unbracketString(text);
+		if (!isUrl(unbracketed)) {
 			return showInfomationAndExit(localeMap("showInformationMessage.selectionTextIsNotUrl"));
 		}
 		// text is Url
 		editor.edit(builder => {
-			builder.replace(editor.selection, `@[card](${text})\n`);
+			builder.replace(editor.selection, `@[card](${unbracketed})\n`);
 		});
 	});
 
